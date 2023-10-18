@@ -1,0 +1,34 @@
+{% extends 'workshop_main.html' %}
+
+{% block title%}
+    <title>WorkShop_Read</title>
+{% endblock %}
+
+{% block content %}
+    <h1>WorkShop_Read</h1>
+    <hr>
+    {% for guest_book in guest_book %}
+
+    내용: {{ guest_book.comment }}
+    작성일:{{ guest_book.pub_date }}
+
+    <div>
+    좋아요: {{ guest_book.likes }}
+    싫어요: {{ guest_book.dislikes }}
+    슬퍼요: {{ guest_book.sadness }}
+    </div>
+
+    <form method="post">
+        {% csrf_token %}
+        <input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
+        <button type="submit" name="action" value="like">좋아요</button>
+        <button type="submit" name="action" value="dislike">싫어요</button>
+        <button type="submit" name="action" value="sad">슬퍼요</button>
+    </form>
+
+    {% endfor %}
+
+
+
+
+{% endblock %}
