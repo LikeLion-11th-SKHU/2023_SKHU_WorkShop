@@ -7,19 +7,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     {% block title %}
         <title>2023-SKHU-WorkShop</title>
-    {% endblock %}
-</head>
+        {% endblock %}
+        <link rel="stylesheet" href="{% static 'css/main.css' %}" type = "text/css"> <!-- 스태틱 CSS 테스트 -->
+    </head>
 <body>
     <!-- 메뉴 -->
     <nav>
-        <a href="{% url 'workshop_create' %}">글 작성하기</a>
         <a href="{% url 'workshop_read' %}">글 모아보기</a>
     </nav>
     <!-- 메뉴 끝-->
 
     <!-- 컨텐츠 -->
     {% block content %} 
-        <h1>test_text</h1>
+    <h1>test_text</h1>
+     <!-- 스태틱 이미지 테스트 -->
+    <img src="{% static 'img/test.png' %}">  
     {% endblock %}
     <!-- 컨텐츠 끝-->
 </body>

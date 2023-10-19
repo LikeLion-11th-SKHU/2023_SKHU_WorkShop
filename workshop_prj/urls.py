@@ -16,11 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.conf import settings
 import workshop_main.views
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', workshop_main.views.workshop_main, name='workshop_main'),
-    path('workshop_create/', workshop_main.views.workshop_create, name = 'workshop_create'),
     path('workshop_read/', workshop_main.views.workshop_read, name='workshop_read'),
-]
+]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

@@ -11,6 +11,7 @@
 
     내용: {{ guest_book.comment }}
     작성일:{{ guest_book.pub_date }}
+    <img src={% if guest_book.image %}"{{ guest_book.image.url }}"{% else %}""{% endif %} alt="">
 
     <div>
     좋아요: {{ guest_book.likes }}
@@ -26,9 +27,24 @@
         <button type="submit" name="action" value="sad">슬퍼요</button>
     </form>
 
+
     {% endfor %}
 
 
+    <h1>Create Page</h1>
+    <hr>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <button type = "submit">작성</button>
+    </form>
 
 
 {% endblock %}
+
+
+
+
+

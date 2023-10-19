@@ -7,6 +7,7 @@ class WorkShop(models.Model):
     likes = models.PositiveIntegerField(default=0)
     dislikes = models.IntegerField(default=0)
     sadness = models.IntegerField(default=0)
+    image = models.ImageField(blank=True)
     
     def __str__(self):
         return self.comment
