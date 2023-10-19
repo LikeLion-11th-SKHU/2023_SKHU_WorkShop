@@ -15,16 +15,16 @@
 
     <div>
     좋아요: {{ guest_book.likes }}
-    싫어요: {{ guest_book.dislikes }}
-    슬퍼요: {{ guest_book.sadness }}
+    </div>
+
+    <div>
+        이모지: {{ guest_book.get_emoji_display }}
     </div>
 
     <form method="post">
         {% csrf_token %}
         <input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
         <button type="submit" name="action" value="like">좋아요</button>
-        <button type="submit" name="action" value="dislike">싫어요</button>
-        <button type="submit" name="action" value="sad">슬퍼요</button>
     </form>
 
 
@@ -35,12 +35,9 @@
     <hr>
     <form method="POST" enctype="multipart/form-data">
         {% csrf_token %}
-        <table>
-            {{ form.as_table }}
-        </table>
+            {{form.as_p}}
         <button type = "submit">작성</button>
     </form>
-
 
 {% endblock %}
 

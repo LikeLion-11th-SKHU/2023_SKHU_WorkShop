@@ -18,10 +18,6 @@ def workshop_read(request):
             
             if action == 'like':
                 workshop.likes += 1
-            elif action == 'dislike':
-                workshop.dislikes += 1
-            elif action == 'sad':
-                workshop.sadness += 1
             workshop.save()
 
     # 워크샵 생성
