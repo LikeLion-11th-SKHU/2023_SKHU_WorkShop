@@ -1,28 +1,49 @@
 {% load static %}
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% block title %}
-        <title>2023-SKHU-WorkShop</title>
-        {% endblock %}
-        <link rel="stylesheet" href="{% static 'css/main.css' %}" type = "text/css"> <!-- 스태틱 CSS 테스트 -->
-    </head>
+    <link rel="stylesheet" href="{% static 'css/reset.css' %}">
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <title>2023 소프트웨어공학 워크샵</title>
+</head>
 <body>
-    <!-- 메뉴 -->
-    <nav>
-        <a href="{% url 'workshop_read' %}">글 모아보기</a>
-    </nav>
-    <!-- 메뉴 끝-->
+<div id="content">
+    <div id="main_container">
+        <nav role="navigation" class="nav_container">
+            <input class="burger-check" type="checkbox" id="burger-check" />
+            <label class="burger-icon" for="burger-check">
+                <span class="burger-sticks"></span>
+            </label>
+            <div class="wrap_menu">
+                <div class="content_menu">
+                    <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                    <hr>
+                    <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                    <hr>
+                    <a class="anchor_menu" href="#">소개</a>
+                </div>
+            </div>
+        </nav> <!-- nav_container-->
 
-    <!-- 컨텐츠 -->
-    {% block content %} 
-    <h1>test_text</h1>
-     <!-- 스태틱 이미지 테스트 -->
-    <img src="{% static 'img/test.png' %}">  
-    {% endblock %}
-    <!-- 컨텐츠 끝-->
+        <div class="main_content">
+            <div class="main_headline">
+                <h1>당신의 <br> 개발자 <br> 타입은?</h1>
+            </div>
+            <button class="startBtn" type="button">
+                테스트 시작하기
+            </button>
+            <div class="anchor_about">
+                <div class="about_workshop">
+                    <p>본 테스트는 2023 성공회대학교<br> 소프트웨어공학과 워크샵 팀 빌딩을<br>위해 만들어진 테스트입니다.</p>
+                </div>
+                <button class="aboutBtn" type="button">
+                    <span>워크샵 더 알아보기 →</span>
+                </button>
+            </div>
+        </div>
+    </div> <!-- main_container -->
+</div> <!-- 전체 콘텐츠 -->
 </body>
 </html>
