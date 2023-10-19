@@ -264,6 +264,11 @@ mark {
   box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset, 5px -5px 20px 0px #FFF inset;
 }
 
+.nextactiveBtn {
+  background: var(--Mint, #86FFD3) !important;
+}
+
+
 .testQuestionTitle {
   margin: 42px 0 0 30px;
 }
