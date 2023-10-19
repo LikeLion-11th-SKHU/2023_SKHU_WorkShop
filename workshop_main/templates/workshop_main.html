@@ -10,40 +10,299 @@
 </head>
 <body>
 <div id="content">
-    <div id="main_container">
-        <nav role="navigation" class="nav_container">
-            <input class="burger-check" type="checkbox" id="burger-check" />
-            <label class="burger-icon" for="burger-check">
-                <span class="burger-sticks"></span>
-            </label>
-            <div class="wrap_menu">
-                <div class="content_menu">
-                    <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
-                    <hr>
-                    <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
-                    <hr>
-                    <a class="anchor_menu" href="#">소개</a>
+    <article class="index">
+        <div class="main_container">
+            <nav role="navigation" class="nav_container">
+                <input class="burger-check" type="checkbox" id="burger-check" />
+                <label class="burger-icon" for="burger-check">
+                    <span class="burger-sticks"></span>
+                </label>
+                <div class="wrap_menu">
+                    <div class="content_menu">
+                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">소개</a>
+                    </div>
                 </div>
-            </div>
-        </nav> <!-- nav_container-->
-
-        <div class="main_content">
-            <div class="main_headline">
-                <h1>당신의 <br> 개발자 <br> 타입은?</h1>
-            </div>
-            <button class="startBtn" type="button">
-                테스트 시작하기
-            </button>
-            <div class="anchor_about">
-                <div class="about_workshop">
-                    <p>본 테스트는 2023 성공회대학교<br> 소프트웨어공학과 워크샵 팀 빌딩을<br>위해 만들어진 테스트입니다.</p>
+            </nav> <!-- nav_container-->
+    
+            <div class="main_content">
+                <div class="main_headline">
+                    <h1>당신의 <br> 개발자 <br> 타입은?</h1>
                 </div>
-                <button class="aboutBtn" type="button">
-                    <span>워크샵 더 알아보기 →</span>
+                <button class="startBtn" type="button" onclick="startTest();">
+                    테스트 시작하기
                 </button>
+                <div class="anchor_about">
+                    <div class="about_workshop">
+                        <p>본 테스트는 2023 성공회대학교<br> 소프트웨어공학과 워크샵 팀 빌딩을<br>위해 만들어진 테스트입니다.</p>
+                    </div>
+                    <button class="aboutBtn" type="button" onclick="about()">
+                        <span>워크샵 더 알아보기 →</span>
+                    </button>
+                </div>
             </div>
-        </div>
-    </div> <!-- main_container -->
+        </div> <!-- main_container -->
+    </article>
+
+    <article class="testStart">
+        <div class="main_container">
+            <nav role="navigation" class="nav_container">
+                <input class="burger-check" type="checkbox" id="burger-check" />
+                <label class="burger-icon" for="burger-check">
+                    <span class="burger-sticks"></span>
+                </label>
+                <div class="wrap_menu">
+                    <div class="content_menu">
+                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">소개</a>
+                    </div>
+                </div>
+            </nav> <!-- nav_container-->
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: calc(100/7*0%)"></div>
+            </div>
+            <div class="wrapper_testContent">
+                <div class="introExplain">
+                    <p class="paragraph_intro">
+                        프로젝트 경험을 위해<br>
+                        <b>소프트웨어 캡스톤 디자인</b> 강의를<br>
+                        듣기로 계획한 나! <br><br>
+                        하지만... 누군가와 같이 협업을<br>
+                        해본 적 없는 나는 <b>나에게 맞는</b><br>
+                        <b>개발 직군</b>이 무엇인지도 모르겠다😥 <br><br>
+                        적을 알고 나를 알면 백전백승!<br>
+                        캡스톤 디자인에 대해<br>
+                        들어본적조차 없는 나는<br><br>
+                        소프트웨어공학과를 알아보기 위해, <br>
+                        그리고 나와 맞는 팀원을 찾아<br>
+                        성공적인 프로젝트 경험과<br>
+                        학점을 위해<br><br>
+                        <b>개발 타입 테스트</b>를 하게 되는데...
+                    </p>
+                </div>
+                <button type="button" class="nextBtn" onclick="startnext()">다음으로</button>
+            </div>
+        </div> <!-- main_container -->
+    </article> <!-- testStart-->
+
+    <article class="testQuestion">
+        <div class="main_container">
+            <nav role="navigation" class="nav_container">
+                <input class="burger-check" type="checkbox" id="burger-check" />
+                <label class="burger-icon" for="burger-check">
+                    <span class="burger-sticks"></span>
+                </label>
+                <div class="wrap_menu">
+                    <div class="content_menu">
+                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">소개</a>
+                    </div>
+                </div>
+            </nav> <!-- nav_container-->
+            <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: calc(100/8*0%)"></div>
+            </div>
+            <div class="wrapper_testContent">
+                <div class="testQuestionTitle">
+                    <h2 id="question_title">질문</h2>
+                </div>
+                <div class="testQuestionBtn">
+                    <div class="testAnswerBtn">
+                        <input type="radio" id="A_ans" name="answer" class="answerinput" />
+                        <label for="A_ans" class="answerBtn" id="A">A</label>
+                    </div>
+                    <div class="testAnswerBtn">
+                        <input type="radio" id="B_ans" name="answer" class="answerinput" />
+                        <label for="B_ans" class="answerBtn" id="B">B</label>
+                    </div>
+                    <div class="testAnswerBtn">
+                        <input type="radio" id="C_ans" name="answer" class="answerinput" />
+                        <label for="C_ans" class="answerBtn" id="C">C</label>
+                    </div>
+                    <div class="testAnswerBtn">
+                        <input type="radio" id="D_ans" name="answer" class="answerinput" />
+                        <label for="D_ans" class="answerBtn" id="D">D</label>
+                    </div>
+                    
+                </div>
+                <button type="button" class="nextBtn" onclick="next()">다음으로</button>
+            </div>
+        </div> <!-- main_container -->
+    </article> <!-- testQuestion -->
+
+    <article class="result">
+        <div class="main_container">
+            <nav role="navigation" class="nav_container">
+                <input class="burger-check" type="checkbox" id="burger-check" />
+                <label class="burger-icon" for="burger-check">
+                    <span class="burger-sticks"></span>
+                </label>
+                <div class="wrap_menu">
+                    <div class="content_menu">
+                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                        <hr>
+                        <a class="anchor_menu" href="#">소개</a>
+                    </div>
+                </div>
+            </nav> <!-- nav_container-->
+            <div class="wrap_result">
+                <span class="developer_name">게임 개발자</span>
+                <div class="wrap_dev_Img">
+                    <img src="{% static 'img/lion.png' %}" alt="dev" />
+                </div>
+                <div class="wrap_dev_explain">
+                    <p class="dev_explain">
+                        캐릭터 디자이너, 스토리 작가 등<br>여러 사람과의 협업과 소통을 위한 <b>커뮤니케이션</b>과 <br> 개발을 하며 마주치는<br> 수많은 <b>버그와 오류</b>를 때려잡기 위한<br><br>논리적인</b>성격의 소유자라면<br><mark>게임 개발자</mark>가 제격!<br><br>특히 안정적인 게임 운영을 위해서라면<br>게임 코드에 대해<br>끊임없이 고민해야할 <b>열정</b>과<br>게임 유저의 피드백을<br>적극적으로 반영할 <b>의지</b>와 태도를 겸비해야할 <mark>게임 개발자</mark>는 <br><br> 내가 직접 설계하고 제작한 게임이<br> 많은 유저를 거쳐 플레이된다는<br>보람을 느낄 수 있어요
+                    </p>
+                </div>
+                <div class="hr_recommend">
+                    <hr class="hr_re">
+                    <span>추천 강의</span>
+                    <hr class="hr_re">
+                </div>
+                <div class="wrap_recommend_lecture">
+                    <span class="lecture1">Python 프로그래밍</span>
+                    <span class="lecture2">빅데이터</span>
+                </div>
+                
+                <div class="wrap_apply">
+                    <p class="paragraph_apply">
+                        워크샵에 참여하고 싶으시다면! <br><br>
+                        결과로 나온 개발 직군이 보이도록<br>
+                        <mark>화면을 캡쳐</mark>하고, 아래 버튼을 통해<br>
+                        워크샵 모집 링크로 이동해주세요😊
+                    </p>
+                    
+                    <button class="applyBtn" type="button">워크샵 지원하기</button>
+                </div>
+            </div>
+        </div> <!-- main_container -->
+    </article>
 </div> <!-- 전체 콘텐츠 -->
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+    crossorigin="anonymous"></script>
+
+<script>
+    $('.testStart').hide()
+    $('.testQuestion').hide()
+    $('.result').hide()
+
+    const imgArray = new Array();
+    imgArray[0] = "{% static 'img/test.png' %}";
+    imgArray[1] = "{% static 'img/test.png' %}";
+    imgArray[2] = "{% static 'img/test.png' %}";
+    imgArray[3] = "{% static 'img/test.png' %}";
+    imgArray[4] = "{% static 'img/test.png' %}";
+    imgArray[5] = "{% static 'img/test.png' %}";
+    imgArray[6] = "{% static 'img/test.png' %}";
+    imgArray[7] = "{% static 'img/test.png' %}";
+
+    var num = 1; // 현재 질문 번호
+
+    // 질문 정보 담기
+    var q = {
+        1: { "title": "소프트웨어공학과의 강의 중<br> 가장 관심이 가는 강의는?", "A": "Html, css, javascript를 토대로<br> 웹 페이지를 설계하는 웹 개발 입문", "B": "데이터의 처리와 통계를 위한 빅데이터", "C": "서비스 개발의 분석과 설계를<br>위한 시스템 분석 및 설계", "D": "개발을 위한 서버와 네트워크 전반을<br> 위한 서버 구축 및 형상 관리"},
+        2: { "title": "근로 활동 중<br>가장 관심이 가는 활동은?", "A": "교내 컴퓨터 등 시설을 관리하고<br> 문제를 해결하는 A/S실 근로", "B": "멘토가 되어 학생들을 대상으로 학습과<br> 상담 등을 지원하는 멘토링 근로"},
+        3: { "title": "내가 주로 프로젝트에<br>참여하는 방식은?", "A": "팀원은 팀원, 친구는 친구! <br> 친목보다는 내 일이 우선", "B": "팀원도 내 친구! <br> 친해져야 일이 잘 되는 편"}, 
+        4: { "title": "성공적인 프로젝트를 만들기 위해<br> 필요한 요소라고 생각하는 것은?", "A": "세련되고 섬세한 디자인과 <br> 재미있는 요소", "B": "효과적인 맞춤 서비스 제공", "C": "지속적인 수정을 통한<br>안정적인 서비스 운영", "D": "서비스에 대한 끊임없는 분석과 이해"},
+        5: { "title": "프로젝트 회의 장소까지 가는 데에<br>1시간이 걸릴 경우, 나는 보통...", "A": "넉넉잡아 1시간 30분 전에<br> 출발해서 미리 도착해 있는다.", "B": "딱 1시간에 맞춰 출발한다."},
+        6: { "title": "각자 개발 파트를 정하고, 업무를<br>분담하고 나서 가장 먼저 할 일은?", "A": "마감일까지의 계획을 우선적으로 세운다.", "B": "바로 개발에 돌입한다."},
+        7: { "title": "앗! 캡스톤 디자인의 성적으로<br>A+을 받았다!", "A": "열심히 했기 때문에 당연한 결과다.<br>마음이 뿌듯해진다.", "B": "열심히 했던 지난 시간들이<br>생각나고 팀원들에게 고마워진다."},
+        8: { "title": "만들었던 서비스를 추가적으로<br>디벨롭 하자는 의견이 나왔다면...", "A": "내가 평소에 동경하거나 멋있다고<br> 생각했던 기능을 추가해 발전시키고 싶다!", "B": "내가 구현했던 서비스를 수정해서<br> 더 나은 서비스를 발전시키고 싶다!"}
+    }
+
+    // 개발자 결과 정보 저장
+    var mbti_information = {
+        "ESTP": { 'developer': '게임 개발자', 'explain': '캐릭터 디자이너, 스토리 작가 등<br>여러 사람과의 협업과 소통을 위한 <b>커뮤니케이션</b>과 <br> 개발을 하며 마주치는<br> 수많은 <b>버그와 오류</b>를 때려잡기 위한<br><br>논리적인</b>성격의 소유자라면<br><mark>게임 개발자</mark>가 제격!<br><br>특히 안정적인 게임 운영을 위해서라면<br>게임 코드에 대해<br>끊임없이 고민해야할 <b>열정</b>과<br>게임 유저의 피드백을<br>적극적으로 반영할 <b>의지</b>와 태도를 겸비해야할 <mark>게임 개발자</mark>는 <br><br> 내가 직접 설계하고 제작한 게임이<br> 많은 유저를 거쳐 플레이된다는<br>보람을 느낄 수 있어요'},
+        "ENTP": { 'developer': '데이터 사이언티스트', 'explain': '기획자, 개발자, 마케터 등등<br> 여러 사람과의 소통을<br> 꺼리지 않는 <b>사교성</b> 과<br>내가 분석할 데이터에 대한<br> 정확한 <b>인사이트</b> 를 제시할 줄 아는<br> <b>분석</b>적인 성격의 소유자라면<br> <mark>데이터 사이언티스트</mark>가 제격!<br><br>특히 수많은 데이터 분석을 위해서라면<br>데이터들간의 차이를 분석하고,<br> 이를 예측하는 통찰력과<br>내가 원하는 결과를 도출하기 위해<br>데이터를 가공하고 정제하기 위한<br> <b>수학적</b> 사고를 가진<br> <mark>데이터 사이언티스트</mark>는 <br><br>과거와 현재를 분석하여 조직의 미래를<br> 제시하는 길잡이가 되어요'},
+        "ISTJ": { 'developer': '임베디드 개발자', 'explain': '<b>기계</b>를 만지고 탐구하고 뜯어보고, <br>작동 원리까지 궁금해하는 <b>호기심</b>과<br>오류나 버그를 보면 지나치지 못하는<br><b>완벽주의자</b>와 같은 성향의 소유자라면<br>하드웨어를 제어하고 움직이게 하는<br><mark>임베디드 개발자</mark> 가 제격!<br><br>특히 오류없는 <b>하드웨어</b>의 작동을 위한<br> 소프트웨어 개발의 기반이 되는<br>하드웨어를 위한 전기전자적인<br>지식들과 <b>회로도</b>에 대한 분석 능력,<br>그리고 하드웨어를 제어하기위한 <br> 개발 언어와 프로그램에 대한 이해력을 가져야하는 <mark>임베디드 개발자</mark> 는 <br> <br>이름은 익숙하지 않아도 <br>사실 그 무엇보다 <br>우리의 곁에서 가까운 존재랍니다'},
+        "ESFJ": { 'developer': '데브옵스', 'explain': '하나를 꾸준히 지속적으로<br>파고드는 <b>열정</b>과<br>시스템의 개발과, 운영, <b>배포</b>와 <br><b>버전 관리</b>까지 모두를 아우를 수 있는<br>포용력의 소유자라면<br>소프트웨어의 개발과 운영을 <br>자동화하는 <mark>데브옵스</mark> 가 제격!<br><br>특히 서비스를 효과적으로 <br>사용자에게 제공함에 있어서<br>시스템을 자동화하기 위해 <br><b>운영체제와 클라우드</b>에 대한 지식과 <br>보다 우수하고 안정적인 <br>서비스에 대한 지속적인 관심과 <br>애정을 가져야하는 <mark>데브옵스</mark> 는<br><br>복잡하고 수많은 문제들을 해결해주는<br> 서비스의 <b>방법론</b>이 되어준답니다'},
+    }
+
+    // 추천 강의
+    var mbti_recommendLecture = {
+        'ESTP': {'lecture1': 'C++프로그래밍', 'lecture2': '게임프로그래밍'},
+        'ENTP': {'lecture1': 'Python 프로그래밍', 'lecture2': '빅데이터'},
+        'ISTJ': {'lecture1': '컴퓨터 구조', 'lecture2': '임베디드 리눅스'},
+        'ESFJ': {'lecture1': '서버구축 및 형상관리', 'lecture2': '네트워크 프로그래밍'},   
+    }
+    
+    // 테스트 시작하기를 눌렀을 때
+    function startTest() {
+        $(".index").hide();
+        $(".testStart").show();
+    }
+
+    function startnext() {
+        $(".testStart").hide();
+        $(".testQuestion").show();
+
+        $(".progress-bar").attr('style', 'width: calc(100/8*' + num + '%)')
+        $("#question_title").html(q[num]["title"]);
+            $("#A").html(q[num]["A"]);
+            $("#B").html(q[num]["B"]);
+            if (q[num]["C"]) {
+                $("#C").html(q[num]["C"]);
+                $("#C").show()
+            } else {
+                $("#C").hide()
+            }
+            if (q[num]["D"]) {
+                $("#D").show()
+                $("#D").html(q[num]["D"]);
+            } else {
+                $("#D").hide()
+            }
+            num++;
+    }
+
+    function next() {
+        // 질문이 끝났을 때
+        if (num == 9) {
+            $('.testQuestion').hide();
+            $('.result').show();
+        }
+        else {
+            $(".progress-bar").attr('style', 'width: calc(100/8*' + num + '%)')
+
+            $("#question_title").html(q[num]["title"]);
+            $("#A").html(q[num]["A"]);
+            $("#B").html(q[num]["B"]);
+            if (q[num]["C"]) {
+                $("#C").html(q[num]["C"]);
+                $("#C").show()
+            } else {
+                $("#C").hide()
+            }
+            if (q[num]["D"]) {
+                $("#D").show()
+                $("#D").html(q[num]["D"]);
+            } else {
+                $("#D").hide()
+            }
+            num++;
+            console.log(num);
+        }
+    }
+
+</script>
+
+<script src="https://kit.fontawesome.com/92dfdaf3a2.js" crossorigin="anonymous"></script>
 </body>
 </html>
