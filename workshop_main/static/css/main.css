@@ -254,7 +254,7 @@ mark {
   width: 287px;
   height: 55px;
   margin: 0 auto;
-  color: var(--black-color);
+  color: rgba(15, 23, 42, 0.50);
   text-align: center;
   font-size: 20px;
   font-weight: 500;
@@ -266,6 +266,7 @@ mark {
 
 .nextactiveBtn {
   background: var(--Mint, #86FFD3) !important;
+  color: var(--black-color);
 }
 
 
