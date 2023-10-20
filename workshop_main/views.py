@@ -4,10 +4,10 @@ from django.utils import timezone
 from .models import WorkShop
 from django.http import JsonResponse
 # Create your views here.
-def workshop_main(request):
-    return render(request, 'workshop_main.html')
+def main(request):
+    return render(request, 'main.html')
 
-def workshop_read(request):
+def guestbook(request):
     if request.method == "POST":
         # 워크샵 리액션 처리
         workshop_id = request.POST.get('workshop_id')
@@ -31,5 +31,7 @@ def workshop_read(request):
     # WorkShop 객체를 pub_date 기준으로 내림차순 정렬
     guest_book = WorkShop.objects.order_by('-pub_date')
     form = Workshop_Form() 
-    return render(request, 'workshop_read.html', {'guest_book': guest_book, 'form': form})
-    
+    return render(request, 'guestbook.html', {'guest_book': guest_book, 'form': form})
+
+def introduce(request):
+    return render(request, 'introduce.html')

@@ -6,10 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{% static 'css/reset.css' %}">
     <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    {% block title %}
     <title>2023 소프트웨어공학 워크샵</title>
+    {% endblock %}
 </head>
 <body>
 <div id="content">
+    {% block content %}
     <article class="index">
         <div class="main_container">
             <nav role="navigation" class="nav_container">
@@ -19,9 +22,11 @@
                 </label>
                 <div class="wrap_menu">
                     <div class="content_menu">
-                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <a class="anchor_menu" href="{% url 'main' %}">홈</a>
                         <hr>
                         <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                        <hr>
+                        <a class="anchor_menu" href="{% url 'guestbook' %}">방명록</a>
                         <hr>
                         <a class="anchor_menu" href="#">소개</a>
                     </div>
@@ -56,7 +61,7 @@
                 </label>
                 <div class="wrap_menu">
                     <div class="content_menu">
-                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <a class="anchor_menu" href="{% url 'main' %}">홈</a>
                         <hr>
                         <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
                         <hr>
@@ -100,7 +105,7 @@
                 </label>
                 <div class="wrap_menu">
                     <div class="content_menu">
-                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <a class="anchor_menu" href="{% url 'main' %}">홈</a>
                         <hr>
                         <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
                         <hr>
@@ -148,7 +153,7 @@
                 </label>
                 <div class="wrap_menu">
                     <div class="content_menu">
-                        <a class="anchor_menu" href="{% url 'workshop_main' %}">홈</a>
+                        <a class="anchor_menu" href="{% url 'main' %}">홈</a>
                         <hr>
                         <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
                         <hr>
@@ -518,5 +523,6 @@
 </script>
 
 <script src="https://kit.fontawesome.com/92dfdaf3a2.js" crossorigin="anonymous"></script>
+{% endblock %}
 </body>
 </html>
