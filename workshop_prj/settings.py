@@ -37,7 +37,10 @@ SECRET_KEY = get_secret("SECRET_KEY")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+    'localhost', '127.0.0.1', # 런서버를 위해
+    ".ap-northeast-2.compute.amazonaws.com"
+]
 
 
 # Application definition
