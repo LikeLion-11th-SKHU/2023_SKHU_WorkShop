@@ -17,11 +17,11 @@
                 <div class="content_menu">
                     <a class="anchor_menu" href="{% url 'main' %}">홈</a>
                     <hr>
-                    <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                    <a class="anchor_menu" href="{% url 'introduce' %}">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
                     <hr>
                     <a class="anchor_menu" href="{% url 'guestbook' %}">방명록</a>
                     <hr>
-                    <a class="anchor_menu" href="#">소개</a>
+                    <a class="anchor_menu" href="{% url 'introduce' %}">소개</a>
                 </div>
             </div>
         </nav> <!-- nav_container-->
@@ -34,15 +34,15 @@
             <div class="wrap_timetable">
                 <table class="timetable">
                     <tr>
-                        <td>날짜</td>
-                        <td>2023. 11. 01</td>
+                        <td class="border-bottom border-right">날짜</td>
+                        <td class="border-bottom">2023. 11. 01</td>
                     </tr>
                     <tr>
-                        <td>시간</td>
-                        <td>15:00 ~ 18:00</td>
+                        <td class="border-bottom border-right">시간</td>
+                        <td class="border-bottom">15:00 ~ 18:00</td>
                     </tr>
                     <tr>
-                        <td>장소</td>
+                        <td class="border-right">장소</td>
                         <td>6110호</td>
                     </tr>
                 </table>

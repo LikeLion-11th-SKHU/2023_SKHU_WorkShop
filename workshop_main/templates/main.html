@@ -24,7 +24,7 @@
                     <div class="content_menu">
                         <a class="anchor_menu" href="{% url 'main' %}">홈</a>
                         <hr>
-                        <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+                        <a class="anchor_menu" href="{% url 'introduce' %}">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
                         <hr>
                         <a class="anchor_menu" href="{% url 'guestbook' %}">방명록</a>
                         <hr>
@@ -44,8 +44,8 @@
                     <div class="about_workshop">
                         <p>본 테스트는 2023 성공회대학교<br> 소프트웨어공학과 워크샵 팀 빌딩을<br>위해 만들어진 테스트입니다.</p>
                     </div>
-                    <button class="aboutBtn" type="button" onclick="about()">
-                        <span>워크샵 더 알아보기 →</span>
+                    <button class="aboutBtn" type="button">
+                        <a href="{% url 'introduce' %}"><span>워크샵 더 알아보기 →</span></a>
                     </button>
                 </div>
             </div>
@@ -372,17 +372,17 @@
         // 문항 1번
         if (num == 1) {
             if (selectVal == 'A') {
-                data['ENFP'] += 2;
-                data['ENFJ'] += 2;
+                data['ENFP'] += 3;
+                data['ENFJ'] += 3;
             } else if (selectVal == 'B') {
-                data['ISFJ'] += 2;
-                data['ENTP'] += 2;
+                data['ISFJ'] += 3;
+                data['ENTP'] += 3;
             } else if (selectVal == 'C') {
-                data['ISTJ'] += 2;
-                data['ESTP'] += 2;
+                data['ISTJ'] += 3;
+                data['ESTP'] += 3;
             } else if (selectVal == 'D') {
-                data['INTJ'] += 2;
-                data['ESFJ'] += 2;
+                data['INTJ'] += 3;
+                data['ESFJ'] += 3;
             } else {
                 console.log('data error');
             }
@@ -434,17 +434,17 @@
         // 4번 문항
         else if (num == 4) {
             if (selectVal == 'A') {
-                data['ENFP'] += 2;
-                data['ENFJ'] += 2;
+                data['ENFP'] += 1;
+                data['ENFJ'] += 1;
             } else if (selectVal == 'B') {
-                data['ISFJ'] += 2;
-                data['INTJ'] += 2;
+                data['ISFJ'] += 1;
+                data['INTJ'] += 1;
             } else if (selectVal == 'C') {
-                data['ESTP'] += 2;
-                data['ESFJ'] += 2;
+                data['ESTP'] += 1;
+                data['ESFJ'] += 1;
             } else if (selectVal == 'D') {
-                data['ENTP'] += 2;
-                data['ISTJ'] += 2;
+                data['ENTP'] += 1;
+                data['ISTJ'] += 1;
             } else {
                 console.log('data error');
             }
