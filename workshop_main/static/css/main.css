@@ -14,9 +14,26 @@ mark {
   background: rgba(134, 255, 211, 0.55);
 }
 
+b {
+  font-weight: 700 !important;
+}
+
+a,
+button {
+  color: var(--black-color);
+}
+
+// min 재변경사항
+// 전체 div 하나 더 씌움
+.content_frame {
+  display: flex;
+  justify-content: center;
+}
+
+// min 재변경사항
+// max-width에서 그냥 width로 변경
 #content {
-  max-width: 375px;
-  margin: 0 auto;
+  width: 375px;
 }
 
 .main_container {
@@ -45,12 +62,12 @@ mark {
 
 /* nav바 */
 .wrap_menu {
+  display: none;
   position: absolute;
   top: -2px;
   right: -2px;
   height: 460px;
   max-width: 0;
-  transition: max-width 0.5s ease;
   z-index: 1;
   opacity: 0;
   border-radius: 20px;
@@ -114,6 +131,7 @@ mark {
 }
 
 .burger-check:checked ~ .wrap_menu {
+  display: block;
   max-width: 240px;
   border: 3px solid #fff;
   opacity: 1;
@@ -181,6 +199,9 @@ mark {
 }
 
 .startBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 243px;
   height: 61px;
   margin: 0 auto;
@@ -438,6 +459,171 @@ mark {
   font-size: 22px;
   font-weight: 500;
   text-align: center;
+  border-radius: 50px;
+  border: 2px solid rgba(134, 255, 211, 0.5);
+  background: rgba(255, 255, 255, 0.56);
+  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset,
+    5px -5px 20px 0px #fff inset;
+}
+
+/* ======introduce.html======= */
+
+.guestbook_content {
+  margin: 95px 0 0 0;
+}
+
+.sub_headline2 {
+  text-align: center;
+  color: var(--black-color);
+  font-size: 35px;
+  font-weight: 800;
+}
+
+.wrap_timetable {
+  margin: 60px 0 0 0;
+}
+
+.timetable {
+  width: 223px;
+  height: 144px;
+  margin: 0 auto;
+  border-radius: 10px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.timetable td:nth-child(1) {
+  width: 70px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.timetable td:nth-child(2) {
+  font-size: 15px;
+  font-weight: 400;
+  padding: 0 0 0 16px;
+}
+
+.border-bottom {
+  border-bottom: 1px solid #fff;
+}
+
+.border-right {
+  border-right: 1px solid #fff;
+}
+
+.wrap_explain_workshop {
+  margin: 70px 0 80px 0;
+}
+
+.paragraph_workshop_ex {
+  text-align: center;
+  color: var(--black-color);
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.hr_span {
+  color: var(--black-color);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.hr_tt {
+  width: 50px;
+  border: 1px solid rgba(15, 23, 42, 0.19);
+}
+
+.wrap_timetable_content {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 30px;
+}
+
+.content_time {
+  display: flex;
+  align-items: center;
+}
+
+.time_circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+}
+.time_circle div {
+  width: 9px;
+  height: 9px;
+  border: 1px solid var(--purple-color);
+  border-radius: 50%;
+}
+.headline_time {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--purple-color);
+}
+
+.content_inner {
+  margin: 0 0 0 14.5px;
+  padding: 25px 0 40px 18px;
+  border-left: 1px solid var(--purple-color);
+}
+
+.content_inner h4 {
+  margin: 0 0 10px 0;
+  color: var(--black-color);
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.wrap_hashtag_box {
+  display: flex;
+  gap: 6px;
+  margin: 5px 0 0 0;
+}
+
+.hashtag_box {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.3);
+  box-shadow: 3px 3px 5px rgba(35, 35, 35, 0.1);
+  border-radius: 5px;
+  padding: 5px 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #737b8e;
+}
+
+.hashtag_box span {
+  font-size: 14px;
+  font-weight: 500;
+  color: #737b8e;
+}
+
+.content_inner_last {
+  margin: 0 0 0 14.5px;
+  padding: 25px 0 40px 18px;
+}
+
+.content_inner_last h4 {
+  margin: 0 0 10px 0;
+  color: var(--black-color);
+  font-size: 17px;
+  font-weight: 400;
+}
+
+.testanchor {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 48px auto;
+  padding: 8px 25px;
+  width: 292px;
+  height: 55px;
+  text-align: center;
+  border-radius: 50px;
   border-radius: 50px;
   border: 2px solid rgba(134, 255, 211, 0.5);
   background: rgba(255, 255, 255, 0.56);

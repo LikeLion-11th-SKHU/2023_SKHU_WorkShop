@@ -38,6 +38,7 @@ def guestbook(request):
             form = form.save(commit=False)
             form.pub_date = timezone.now()
             form.save()
+        return redirect('guestbook')
 
     # WorkShop 객체를 pub_date 기준으로 내림차순 정렬
     guest_book = WorkShop.objects.order_by('-pub_date')
