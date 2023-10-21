@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
+	<link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+	<!-- min 변경사항 -->
+	<!-- url 변화 알아차리기 쉽게 일단 title을 url별로 다르게 분리해둠 -->
+	{% block title %}
+	<title>2023 소프트웨어공학 워크샵</title>
+	{% endblock %}
+</head>
+
+<body>
+	<div id="content">
+		<article class="index">
+			<div class="main_container">
+				<nav role="navigation" class="nav_container">
+					<input class="burger-check" type="checkbox" id="burger-check" />
+					<label class="burger-icon" for="burger-check">
+						<span class="burger-sticks"></span>
+					</label>
+					<div class="wrap_menu">
+						<div class="content_menu">
+							<a class="anchor_menu" href="{% url 'main' %}">홈</a>
+							<hr>
+							<a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
+							<hr>
+							<a class="anchor_menu" href="{% url 'guestbook' %}">방명록</a>
+							<hr>
+							<a class="anchor_menu" href="#">소개</a>
+						</div>
+					</div>
+				</nav> <!-- nav_container-->
+
+				<!-- min 변경사항 -->
+				<!--내부 내용 분리-->
+				{% block content %}
+
+				{% endblock %}
+			</div> <!-- main_container -->
+		</article>
+	</div> <!-- 전체 콘텐츠 -->
+	<script src="https://kit.fontawesome.com/92dfdaf3a2.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

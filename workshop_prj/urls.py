@@ -22,7 +22,11 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+		# min 변경사항
+		# main / startTest / test 로 url 분리
     path('', workshop_main.views.main, name='main'),
+		path('startTest/', workshop_main.views.startTest, name='startTest'),
+		path('test/', workshop_main.views.test, name='test'),
     path('guestbook/', workshop_main.views.guestbook, name='guestbook'),
     path('introduce/', workshop_main.views.introduce, name='introduce')
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
