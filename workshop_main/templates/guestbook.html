@@ -1,71 +1,47 @@
-{% extends 'workshop_main.html' %}
+{% extends 'base.html' %}
 {% load static %}
 
 {% block title %}
-    <title>방명록</title>
+<title>방명록</title>
 {% endblock %}
 
 {% block content %}
 <article class="guestbook">
-    <div class="main_container">
-        <nav role="navigation" class="nav_container">
-            <input class="burger-check" type="checkbox" id="burger-check" />
-            <label class="burger-icon" for="burger-check">
-                <span class="burger-sticks"></span>
-            </label>
-            <div class="wrap_menu">
-                <div class="content_menu">
-                    <a class="anchor_menu" href="{% url 'main' %}">홈</a>
-                    <hr>
-                    <a class="anchor_menu" href="#">2023 <br> 소프트웨어공학과 <br> 워크샵</a>
-                    <hr>
-                    <a class="anchor_menu" href="{% url 'guestbook' %}">방명록</a>
-                    <hr>
-                    <a class="anchor_menu" href="#">소개</a>
-                </div>
-            </div>
-        </nav> <!-- nav_container-->
+	<div class="visit">
+		<h1>WorkShop_Read</h1>
+		<hr>
+		{% for guest_book in guest_book %}
 
-        <div class="guestbook_content">
-            
-        </div>
-    </div> <!-- main_container -->
+		내용: {{ guest_book.comment }}
+		작성일:{{ guest_book.pub_date }}
+		<img src={% if guest_book.image %}"{{ guest_book.image.url }}"{% else %}""{% endif %} alt="">
+
+		<div>
+			좋아요: {{ guest_book.likes }}
+		</div>
+
+		<div>
+			이모지: {{ guest_book.get_emoji_display }}
+		</div>
+
+		<form method="post">
+			{% csrf_token %}
+			<input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
+			<button type="submit" name="action" value="like">좋아요</button>
+		</form>
+
+
+		{% endfor %}
+
+
+		<h1>Create Page</h1>
+		<hr>
+		<form method="POST" enctype="multipart/form-data">
+			{% csrf_token %}
+			{{form.as_p}}
+			<button type="submit">작성</button>
+		</form>
+		{% endblock %}
+	</div>
+
 </article>
-
-
-
-
-    <h1>WorkShop_Read</h1>
-    <hr>
-    {% for guest_book in guest_book %}
-
-    내용: {{ guest_book.comment }}
-    작성일:{{ guest_book.pub_date }}
-    <img src={% if guest_book.image %}"{{ guest_book.image.url }}"{% else %}""{% endif %} alt="">
-
-    <div>
-    좋아요: {{ guest_book.likes }}
-    </div>
-
-    <div>
-        이모지: {{ guest_book.get_emoji_display }}
-    </div>
-
-    <form method="post">
-        {% csrf_token %}
-        <input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
-        <button type="submit" name="action" value="like">좋아요</button>
-    </form>
-
-
-    {% endfor %}
-
-
-    <h1>Create Page</h1>
-    <hr>
-    <form method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-            {{form.as_p}}
-        <button type = "submit">작성</button>
-    </form>
-{% endblock %}

@@ -19,26 +19,6 @@ mark {
   margin: 0 auto;
 }
 
-.main_container_nav {
-  max-width: 335px;
-  min-height: 688px;
-  margin: 70px auto;
-  background: linear-gradient(
-    167deg,
-    rgba(231, 217, 255, 0.7) 2.47%,
-    rgba(255, 255, 255, 0.44) 47.17%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  box-shadow: -5px -5px 20px 0px rgba(255, 255, 255, 0.3) inset,
-    0px 4px 200px 0px rgba(172, 121, 255, 0.2) inset,
-    -50px 50px 200px 0px #ac79ff,
-    0px 10px 50px 0px rgba(255, 255, 255, 0.5) inset;
-  backdrop-filter: blur(40px);
-  box-sizing: border-box;
-  border: 4px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-}
-
 .main_container {
   max-width: 335px;
   min-height: 688px;
