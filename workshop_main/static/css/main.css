@@ -1,8 +1,8 @@
 :root {
-    --bg-color: #EDF3FF;
-    --black-color: #0F172A;
-    --mint-color: #86FFD3;
-    --purple-color: #AC79FF;
+  --bg-color: #edf3ff;
+  --black-color: #0f172a;
+  --mint-color: #86ffd3;
+  --purple-color: #ac79ff;
 }
 
 /* ======================================== */
@@ -17,25 +17,51 @@ mark {
 #content {
   max-width: 375px;
   margin: 0 auto;
-    
+}
+
+.main_container_nav {
+  max-width: 335px;
+  min-height: 688px;
+  margin: 70px auto;
+  background: linear-gradient(
+    167deg,
+    rgba(231, 217, 255, 0.7) 2.47%,
+    rgba(255, 255, 255, 0.44) 47.17%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: -5px -5px 20px 0px rgba(255, 255, 255, 0.3) inset,
+    0px 4px 200px 0px rgba(172, 121, 255, 0.2) inset,
+    -50px 50px 200px 0px #ac79ff,
+    0px 10px 50px 0px rgba(255, 255, 255, 0.5) inset;
+  backdrop-filter: blur(40px);
+  box-sizing: border-box;
+  border: 4px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
 }
 
 .main_container {
-  max-width: 335px; 
+  max-width: 335px;
   min-height: 688px;
   margin: 70px auto;
-  background: linear-gradient(167deg, rgba(231, 217, 255, 0.70) 2.47%, rgba(255, 255, 255, 0.44) 47.17%, rgba(255, 255, 255, 0.00) 100%);
-  box-shadow: -5px -5px 20px 0px rgba(255, 255, 255, 0.30) inset, 0px 4px 200px 0px rgba(172, 121, 255, 0.20) inset, -50px 50px 200px 0px #AC79FF, 0px 10px 50px 0px rgba(255, 255, 255, 0.50) inset;
+  background: linear-gradient(
+    167deg,
+    rgba(231, 217, 255, 0.7) 2.47%,
+    rgba(255, 255, 255, 0.44) 47.17%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  box-shadow: -5px -5px 20px 0px rgba(255, 255, 255, 0.3) inset,
+    0px 4px 200px 0px rgba(172, 121, 255, 0.2) inset,
+    -50px 50px 200px 0px #ac79ff,
+    0px 10px 50px 0px rgba(255, 255, 255, 0.5) inset;
   backdrop-filter: blur(40px);
   box-sizing: border-box;
-  border: 4px solid rgba(255, 255, 255, 0.50);
+  border: 4px solid rgba(255, 255, 255, 0.5);
   border-radius: 20px;
 }
 
 .nav_container {
   display: block;
 }
-
 
 /* nav바 */
 .wrap_menu {
@@ -48,10 +74,12 @@ mark {
   z-index: 1;
   opacity: 0;
   border-radius: 20px;
-  background: #E7D8FF;
-  box-shadow: -5px -5px 20px 0px rgba(255, 255, 255, 0.30) inset, 0px 4px 200px 0px rgba(121, 143, 255, 0.30) inset, -50px 50px 200px 0px #FFF, 0px 10px 50px 0px rgba(255, 255, 255, 0.50) inset;
+  background: #e7d8ff;
+  box-shadow: -5px -5px 20px 0px rgba(255, 255, 255, 0.3) inset,
+    0px 4px 200px 0px rgba(121, 143, 255, 0.3) inset, -50px 50px 200px 0px #fff,
+    0px 10px 50px 0px rgba(255, 255, 255, 0.5) inset;
 }
-  
+
 .burger-icon {
   cursor: pointer;
   display: inline-block;
@@ -66,18 +94,18 @@ mark {
   margin: 15px;
 }
 
-
 .burger-icon .burger-sticks {
   background: #fff;
   display: block;
   height: 3px;
   position: relative;
-  transition: background .2s ease-out;
+  transition: background 0.2s ease-out;
   width: 23px;
 }
 
-
-.burger-sticks, .burger-sticks:before, .burger-sticks:after {
+.burger-sticks,
+.burger-sticks:before,
+.burger-sticks:after {
   height: 3px;
   border-radius: 30px;
 }
@@ -85,11 +113,11 @@ mark {
 .burger-icon .burger-sticks:before,
 .burger-icon .burger-sticks:after {
   background: #fff;
-  content: '';
+  content: "";
   display: block;
   height: 100%;
   position: absolute;
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
   width: 100%;
 }
 
@@ -105,26 +133,26 @@ mark {
   display: none;
 }
 
-.burger-check:checked~.wrap_menu {
+.burger-check:checked ~ .wrap_menu {
   max-width: 240px;
   border: 3px solid #fff;
   opacity: 1;
 }
 
-.burger-check:checked~.burger-icon .burger-sticks {
+.burger-check:checked ~ .burger-icon .burger-sticks {
   background: transparent;
 }
 
-.burger-check:checked~.burger-icon .burger-sticks:before {
+.burger-check:checked ~ .burger-icon .burger-sticks:before {
   transform: rotate(-45deg);
 }
 
-.burger-check:checked~.burger-icon .burger-sticks:after {
+.burger-check:checked ~ .burger-icon .burger-sticks:after {
   transform: rotate(45deg);
 }
 
-.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:before,
-.burger-check:checked~.burger-icon:not(.steps) .burger-sticks:after {
+.burger-check:checked ~ .burger-icon:not(.steps) .burger-sticks:before,
+.burger-check:checked ~ .burger-icon:not(.steps) .burger-sticks:after {
   top: 0;
 }
 
@@ -181,9 +209,10 @@ mark {
   color: --var(--black-color);
   text-align: center;
   border-radius: 50px;
-  border: 2px solid rgba(134, 255, 211, 0.50);
+  border: 2px solid rgba(134, 255, 211, 0.5);
   background: rgba(255, 255, 255, 0.56);
-  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset, 5px -5px 20px 0px #FFF inset;
+  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset,
+    5px -5px 20px 0px #fff inset;
 }
 
 .anchor_about {
@@ -212,7 +241,7 @@ mark {
 .aboutBtn {
   height: 46px;
   border-radius: 0px 0px 20px 20px;
-  background: rgba(255, 255, 255, 0.60);
+  background: rgba(255, 255, 255, 0.6);
 }
 
 .aboutBtn span {
@@ -222,12 +251,12 @@ mark {
 }
 
 /* progress-bar */
-.progress{
+.progress {
   margin: 65px 0 0 0;
   height: 10px;
   background: #fff;
 }
-.progress-bar{
+.progress-bar {
   height: 10px;
   background: var(--mint-color);
 }
@@ -254,21 +283,21 @@ mark {
   width: 287px;
   height: 55px;
   margin: 0 auto;
-  color: rgba(15, 23, 42, 0.50);
+  color: rgba(15, 23, 42, 0.5);
   text-align: center;
   font-size: 20px;
   font-weight: 500;
   border-radius: 20px;
-  border: 2px solid rgba(134, 255, 211, 0.50);
-  background: rgba(255, 255, 255, 0.80);
-  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset, 5px -5px 20px 0px #FFF inset;
+  border: 2px solid rgba(134, 255, 211, 0.5);
+  background: rgba(255, 255, 255, 0.8);
+  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset,
+    5px -5px 20px 0px #fff inset;
 }
 
 .nextactiveBtn {
-  background: var(--Mint, #86FFD3) !important;
+  background: var(--Mint, #86ffd3) !important;
   color: var(--black-color);
 }
-
 
 .testQuestionTitle {
   margin: 42px 0 0 30px;
@@ -290,10 +319,9 @@ mark {
 }
 
 .testAnswerBtn {
-  
   width: 288px;
   height: 68px;
-  
+
   cursor: pointer;
   overflow: hidden;
 }
@@ -306,19 +334,19 @@ mark {
   height: 100%;
   color: var(--black-color);
   font-size: 16px;
-  font-weight: 400; 
+  font-weight: 400;
   text-align: center;
-  background: rgba(255, 255, 255, 0.50);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid #fff;
   border-radius: 20px;
 }
 
-.testAnswerBtn > input[type=radio] {
+.testAnswerBtn > input[type="radio"] {
   display: none;
 }
 
-.testAnswerBtn > input[type=radio]:checked + label {
-  background: #D9FFF1;
+.testAnswerBtn > input[type="radio"]:checked + label {
+  background: #d9fff1;
   border: 1px solid var(--mint-color);
   border-radius: 20px;
 }
@@ -328,7 +356,11 @@ mark {
   font-size: 30px;
   font-weight: 800;
   color: var(--black-color);
-  background: linear-gradient(to top, rgba(134, 255, 211, 0.55) 50%, transparent 50%)
+  background: linear-gradient(
+    to top,
+    rgba(134, 255, 211, 0.55) 50%,
+    transparent 50%
+  );
 }
 
 .wrap_result {
@@ -427,7 +459,8 @@ mark {
   font-weight: 500;
   text-align: center;
   border-radius: 50px;
-  border: 2px solid rgba(134, 255, 211, 0.50);
+  border: 2px solid rgba(134, 255, 211, 0.5);
   background: rgba(255, 255, 255, 0.56);
-  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset, 5px -5px 20px 0px #FFF inset;
+  box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset,
+    5px -5px 20px 0px #fff inset;
 }

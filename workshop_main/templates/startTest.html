@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+<title>개발자 타입 테스트 시작</title>
+{% endblock %}
+
+{% block content %}
+
+<article class="testStart">
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" style="width: calc(100/7*0%)"></div>
+	</div>
+	<div class="wrapper_testContent">
+		<div class="introExplain">
+			<p class="paragraph_intro">
+				프로젝트 경험을 위해<br>
+				<b>소프트웨어 캡스톤 디자인</b> 강의를<br>
+				듣기로 계획한 나! <br><br>
+				하지만... 누군가와 같이 협업을<br>
+				해본 적 없는 나는 <b>나에게 맞는</b><br>
+				<b>개발 직군</b>이 무엇인지도 모르겠다😥 <br><br>
+				적을 알고 나를 알면 백전백승!<br>
+				캡스톤 디자인에 대해<br>
+				들어본적조차 없는 나는<br><br>
+				소프트웨어공학과를 알아보기 위해, <br>
+				그리고 나와 맞는 팀원을 찾아<br>
+				성공적인 프로젝트 경험과<br>
+				학점을 위해<br><br>
+				<b>개발 타입 테스트</b>를 하게 되는데...
+			</p>
+		</div>
+		<!-- min 변경사항 -->
+		<!-- test url로 연결 -->
+		<a class="startBtn" href="{% url 'test' %}">다음으로</a>
+	</div>
+</article> <!-- testStart-->
+
+{% endblock %}

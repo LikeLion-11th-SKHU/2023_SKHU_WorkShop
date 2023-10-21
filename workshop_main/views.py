@@ -4,8 +4,19 @@ from django.utils import timezone
 from .models import WorkShop
 from django.http import JsonResponse
 # Create your views here.
+
+# min 변경사항
+# #main / startTest / test 로 url 분리
+
 def main(request):
     return render(request, 'main.html')
+
+def startTest(request):
+    return render(request, 'startTest.html')
+
+def test(request):
+    return render(request, 'test.html')
+
 
 def guestbook(request):
     if request.method == "POST":
