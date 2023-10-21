@@ -82,5 +82,49 @@
                   </svg>
             </a>
         </div>
+
+        <div class="createBar_container">
+            <form method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="emoji_selectBar">
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="happy" required id="id_emoji_0" checked />
+                        <label class="emoji_lbl" for="id_emoji_0">😊</label>
+                    </div>
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="congrats" required id="id_emoji_1" />
+                        <label class="emoji_lbl" for="id_emoji_1">🥳</label>
+                    </div>
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="wink" required id="id_emoji_2" />
+                        <label class="emoji_lbl" for="id_emoji_2">😆</label>
+                    </div>
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="pien" required id="id_emoji_3" />
+                        <label class="emoji_lbl" for="id_emoji_3">🥺</label>
+                    </div>
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="hi" required id="id_emoji_4" />
+                        <label class="emoji_lbl" for="id_emoji_4">👋</label>
+                    </div>
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="heart" required id="id_emoji_5" />
+                        <label class="emoji_lbl" for="id_emoji_5">💗</label>
+                    </div>
+                    <div class="emojiBtn">
+                        <input type="radio" name="emoji" value="lion" required id="id_emoji_6" />
+                        <label class="emoji_lbl" for="id_emoji_6">🦁</label>
+                    </div>
+                </div>
+                <div class="message_inputBar">
+                    <input type="text" name="comment" maxlength="30" required id="id_comment" class="msgInput" />
+                    <button type="submit" class="msgSubmitBtn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+                            <path d="M1.35363 6.95044L25.266 0.71056C26.9195 0.279084 28.3175 1.98596 27.5688 3.52206L16.8287 25.5561C16.423 26.3884 15.2017 26.27 14.9635 25.3753L12.3619 15.6031L18.7169 8.6485L10.3552 13.373L1.16184 8.81393C0.333191 8.403 0.458651 7.18398 1.35363 6.95044Z" fill="#AC79FF" stroke="#9561E9" stroke-linejoin="round"/>
+                          </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
 </article>
 {% endblock %}

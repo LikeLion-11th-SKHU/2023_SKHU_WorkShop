@@ -741,8 +741,8 @@ a, button {
 .upBtn_container {
   width: 65px;
   height: 60px;
-  position: fixed;
-  bottom: 20%;
+  position: absolute;
+  bottom: 10px;
   right: 0;
 }
 
