@@ -1,130 +1,155 @@
 {% extends 'main.html' %}
 {% load static %}
 
+{% block link %}
+<link rel="stylesheet" href="{% static 'css/guestbook.css' %}">
+{% endblock %}
+
 {% block title %}
-    <title>방명록</title>
+<title>방명록</title>
 {% endblock %}
 
 {% block content %}
 <article class="guestbook">
-    <div class="guestbook_content">
-            <div class="wrap_sub_headline2">
-                <h2 class="sub_headline2">방명록</h2>
-            </div>
-            <div class="wrap_sub_paragraph" id="guestbookHead">
-                <p class="guestbook_intro_paragraph">
-                    워크샵에 참여하신 분들,<br>
-                    혹은 워크샵에 참여하지 않으셨더라도<br>
-                    본 테스트를 즐겁게 진행하신 분들 모두<br>
-                    자유롭게 이야기를 남겨주세요~
-                </p>
-            </div>
+	<!-- min 재변경사항 -->
+	<!--전체 감싼 div 수정-->
+	<div class="guestbook_body">
 
-            <div class="container_guestbook_list">
-                {% for guest_book in guest_book %}
-                <div class="wrap_guestbook">
-                    <div class="emoji_collected">
-                        {{ guest_book.get_emoji_display }}
-                    </div>
-                    <div class="guestbook_comment">
-                        <p class="paragraph_comment">{{ guest_book.comment }}</p>
-                    </div>
-                    <div class="guestbook_dateandlike">
-                        <span class="span_date">{{ guest_book.pub_date }}</span>
-                        <form method="POST" enctype="multipart/form-data" class="contain_like">
-                            {% csrf_token %}
-                            <input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
-                            <button class="likeBtn" type="submit" name="action" value="like">
-                                <svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none">
-                                    <path d="M2.14648 6.96259L7.5 12L12.8535 6.96259C14.1147 5.77588 14.4053 3.88265 13.5582 2.37229C12.622 0.703258 10.333 0.426609 9.0262 1.82455L7.5 3.45714L5.9738 1.82455C4.66697 0.426608 2.37798 0.703258 1.44182 2.37229C0.59467 3.88265 0.885299 5.77588 2.14648 6.96259Z" fill="#AC79FF"/>
-                                    <path d="M7.5 12L7.15736 12.3641C7.34987 12.5453 7.65013 12.5453 7.84264 12.3641L7.5 12ZM2.14648 6.96259L2.48912 6.59845V6.59845L2.14648 6.96259ZM5.9738 1.82455L5.60855 2.166L5.9738 1.82455ZM7.5 3.45714L7.13475 3.79859L7.5 4.18931L7.86525 3.79859L7.5 3.45714ZM9.0262 1.82455L9.39145 2.166L9.0262 1.82455ZM12.8535 6.96259L12.5109 6.59845L12.8535 6.96259ZM13.5582 2.37229L13.1221 2.61689V2.61689L13.5582 2.37229ZM1.44182 2.37229L1.00574 2.12769L1.44182 2.37229ZM7.84264 11.6359L2.48912 6.59845L1.80384 7.32673L7.15736 12.3641L7.84264 11.6359ZM5.60855 2.166L7.13475 3.79859L7.86525 3.11569L6.33906 1.4831L5.60855 2.166ZM7.86525 3.79859L9.39145 2.166L8.66094 1.4831L7.13475 3.11569L7.86525 3.79859ZM12.5109 6.59845L7.15736 11.6359L7.84264 12.3641L13.1962 7.32673L12.5109 6.59845ZM13.1221 2.61689C13.8569 3.92695 13.6048 5.56911 12.5109 6.59845L13.1962 7.32673C14.6246 5.98265 14.9538 3.83834 13.9943 2.12769L13.1221 2.61689ZM9.39145 2.166C10.4672 1.01524 12.3515 1.24297 13.1221 2.61689L13.9943 2.12769C12.8926 0.163541 10.1988 -0.162025 8.66094 1.4831L9.39145 2.166ZM1.87791 2.61689C2.64854 1.24297 4.53279 1.01524 5.60855 2.166L6.33906 1.4831C4.80115 -0.162026 2.10742 0.163542 1.00574 2.12769L1.87791 2.61689ZM2.48912 6.59845C1.39519 5.56912 1.1431 3.92695 1.87791 2.61689L1.00574 2.12769C0.0462389 3.83834 0.375409 5.98265 1.80384 7.32673L2.48912 6.59845Z" fill="#AC79FF"/>
-                                  </svg>
-                            </button>
-                            <span>{{ guest_book.likes }}</span>
-                        </form>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        </div>
-        <div class="upBtn_container">
-            <a href="#guestbookHead" style="display: block; width: 100%; height: 100%;">
-                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="60" viewBox="0 0 65 60" fill="none">
-                    <g filter="url(#filter0_d_124_84)">
-                      <circle cx="32" cy="27" r="25" fill="#86FFD3"/>
-                      <circle cx="32" cy="27" r="24.25" stroke="white" stroke-width="1.5"/>
-                    </g>
-                    <g filter="url(#filter1_d_124_84)">
-                      <path d="M22 31L32 22L41 31" stroke="white" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                    </g>
-                    <defs>
-                      <filter id="filter0_d_124_84" x="5" y="0" width="60" height="60" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset dx="3" dy="3"/>
-                        <feGaussianBlur stdDeviation="2.5"/>
-                        <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.0901961 0 0 0 0 0.164706 0 0 0 0.2 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_124_84"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_124_84" result="shape"/>
-                      </filter>
-                      <filter id="filter1_d_124_84" x="0" y="0" width="63" height="53" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                        <feFlood flood-opacity="0" result="BackgroundImageFix"/>
-                        <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
-                        <feOffset/>
-                        <feGaussianBlur stdDeviation="10"/>
-                        <feComposite in2="hardAlpha" operator="out"/>
-                        <feColorMatrix type="matrix" values="0 0 0 0 0.0412037 0 0 0 0 0.618056 0 0 0 0 0.410389 0 0 0 1 0"/>
-                        <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_124_84"/>
-                        <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_124_84" result="shape"/>
-                      </filter>
-                    </defs>
-                  </svg>
-            </a>
-        </div>
+		<div class="wrap_sub_headline2">
+			<h2 class="sub_headline2">방명록</h2>
+		</div>
+		<div class="wrap_sub_paragraph" id="guestbookHead">
+			<p class="guestbook_intro_paragraph">
+				워크샵에 참여하신 분들,<br>
+				혹은 워크샵에 참여하지 않으셨더라도<br>
+				본 테스트를 즐겁게 진행하신 분들 모두<br>
+				자유롭게 이야기를 남겨주세요~
+			</p>
+		</div>
 
-        <div class="createBar_container">
-            <form method="POST" enctype="multipart/form-data">
-                {% csrf_token %}
-                <div class="emoji_selectBar">
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="happy" required id="id_emoji_0" checked />
-                        <label class="emoji_lbl" for="id_emoji_0">😊</label>
-                    </div>
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="congrats" required id="id_emoji_1" />
-                        <label class="emoji_lbl" for="id_emoji_1">🥳</label>
-                    </div>
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="wink" required id="id_emoji_2" />
-                        <label class="emoji_lbl" for="id_emoji_2">😆</label>
-                    </div>
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="pien" required id="id_emoji_3" />
-                        <label class="emoji_lbl" for="id_emoji_3">🥺</label>
-                    </div>
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="hi" required id="id_emoji_4" />
-                        <label class="emoji_lbl" for="id_emoji_4">👋</label>
-                    </div>
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="heart" required id="id_emoji_5" />
-                        <label class="emoji_lbl" for="id_emoji_5">💗</label>
-                    </div>
-                    <div class="emojiBtn">
-                        <input type="radio" name="emoji" value="lion" required id="id_emoji_6" />
-                        <label class="emoji_lbl" for="id_emoji_6">🦁</label>
-                    </div>
-                </div>
-                <div class="message_inputBar">
-                    <input type="text" name="comment" maxlength="30" required id="id_comment" class="msgInput" />
-                    <button type="submit" class="msgSubmitBtn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
-                            <path d="M1.35363 6.95044L25.266 0.71056C26.9195 0.279084 28.3175 1.98596 27.5688 3.52206L16.8287 25.5561C16.423 26.3884 15.2017 26.27 14.9635 25.3753L12.3619 15.6031L18.7169 8.6485L10.3552 13.373L1.16184 8.81393C0.333191 8.403 0.458651 7.18398 1.35363 6.95044Z" fill="#AC79FF" stroke="#9561E9" stroke-linejoin="round"/>
-                          </svg>
-                    </button>
-                </div>
-            </form>
-        </div>
+		<div class="container_guestbook_list">
+			{% for guest_book in guest_book %}
+			<div class="wrap_guestbook">
+				<div class="emoji_collected">
+					{{ guest_book.get_emoji_display }}
+				</div>
+				<div class="guestbook_comment">
+					<p class="paragraph_comment">{{ guest_book.comment }}</p>
+				</div>
+				<div class="guestbook_dateandlike">
+					<span class="span_date">{{ guest_book.pub_date }}</span>
+					<form method="POST" enctype="multipart/form-data" class="contain_like">
+						{% csrf_token %}
+						<input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
+						<button class="likeBtn" type="submit" name="action" value="like">
+							<svg xmlns="http://www.w3.org/2000/svg" width="15" height="13" viewBox="0 0 15 13" fill="none">
+								<path
+									d="M2.14648 6.96259L7.5 12L12.8535 6.96259C14.1147 5.77588 14.4053 3.88265 13.5582 2.37229C12.622 0.703258 10.333 0.426609 9.0262 1.82455L7.5 3.45714L5.9738 1.82455C4.66697 0.426608 2.37798 0.703258 1.44182 2.37229C0.59467 3.88265 0.885299 5.77588 2.14648 6.96259Z"
+									fill="#AC79FF" />
+								<path
+									d="M7.5 12L7.15736 12.3641C7.34987 12.5453 7.65013 12.5453 7.84264 12.3641L7.5 12ZM2.14648 6.96259L2.48912 6.59845V6.59845L2.14648 6.96259ZM5.9738 1.82455L5.60855 2.166L5.9738 1.82455ZM7.5 3.45714L7.13475 3.79859L7.5 4.18931L7.86525 3.79859L7.5 3.45714ZM9.0262 1.82455L9.39145 2.166L9.0262 1.82455ZM12.8535 6.96259L12.5109 6.59845L12.8535 6.96259ZM13.5582 2.37229L13.1221 2.61689V2.61689L13.5582 2.37229ZM1.44182 2.37229L1.00574 2.12769L1.44182 2.37229ZM7.84264 11.6359L2.48912 6.59845L1.80384 7.32673L7.15736 12.3641L7.84264 11.6359ZM5.60855 2.166L7.13475 3.79859L7.86525 3.11569L6.33906 1.4831L5.60855 2.166ZM7.86525 3.79859L9.39145 2.166L8.66094 1.4831L7.13475 3.11569L7.86525 3.79859ZM12.5109 6.59845L7.15736 11.6359L7.84264 12.3641L13.1962 7.32673L12.5109 6.59845ZM13.1221 2.61689C13.8569 3.92695 13.6048 5.56911 12.5109 6.59845L13.1962 7.32673C14.6246 5.98265 14.9538 3.83834 13.9943 2.12769L13.1221 2.61689ZM9.39145 2.166C10.4672 1.01524 12.3515 1.24297 13.1221 2.61689L13.9943 2.12769C12.8926 0.163541 10.1988 -0.162025 8.66094 1.4831L9.39145 2.166ZM1.87791 2.61689C2.64854 1.24297 4.53279 1.01524 5.60855 2.166L6.33906 1.4831C4.80115 -0.162026 2.10742 0.163542 1.00574 2.12769L1.87791 2.61689ZM2.48912 6.59845C1.39519 5.56912 1.1431 3.92695 1.87791 2.61689L1.00574 2.12769C0.0462389 3.83834 0.375409 5.98265 1.80384 7.32673L2.48912 6.59845Z"
+									fill="#AC79FF" />
+							</svg>
+						</button>
+						<span>{{ guest_book.likes }}</span>
+					</form>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<div class="upBtn_container">
+			<a href="#guestbookHead">
+				<svg xmlns="http://www.w3.org/2000/svg" width="65" height="60" viewBox="0 0 65 60" fill="none">
+					<g filter="url(#filter0_d_124_84)">
+						<circle cx="32" cy="27" r="25" fill="#86FFD3" />
+						<circle cx="32" cy="27" r="24.25" stroke="white" stroke-width="1.5" />
+					</g>
+					<g filter="url(#filter1_d_124_84)">
+						<path d="M22 31L32 22L41 31" stroke="white" stroke-width="4" stroke-linecap="round"
+							stroke-linejoin="round" />
+					</g>
+					<defs>
+						<filter id="filter0_d_124_84" x="5" y="0" width="60" height="60" filterUnits="userSpaceOnUse"
+							color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha" />
+							<feOffset dx="3" dy="3" />
+							<feGaussianBlur stdDeviation="2.5" />
+							<feComposite in2="hardAlpha" operator="out" />
+							<feColorMatrix type="matrix" values="0 0 0 0 0.0588235 0 0 0 0 0.0901961 0 0 0 0 0.164706 0 0 0 0.2 0" />
+							<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_124_84" />
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_124_84" result="shape" />
+						</filter>
+						<filter id="filter1_d_124_84" x="0" y="0" width="63" height="53" filterUnits="userSpaceOnUse"
+							color-interpolation-filters="sRGB">
+							<feFlood flood-opacity="0" result="BackgroundImageFix" />
+							<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+								result="hardAlpha" />
+							<feOffset />
+							<feGaussianBlur stdDeviation="10" />
+							<feComposite in2="hardAlpha" operator="out" />
+							<feColorMatrix type="matrix" values="0 0 0 0 0.0412037 0 0 0 0 0.618056 0 0 0 0 0.410389 0 0 0 1 0" />
+							<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_124_84" />
+							<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_124_84" result="shape" />
+						</filter>
+					</defs>
+				</svg>
+			</a>
+		</div>
+	</div>
 </article>
+{% endblock %}
+
+
+<!-- min 재변경사항 -->
+<!--방명록 input 분리-->
+{% block input %}
+
+<div class="createBar_container">
+	<form method="POST" enctype="multipart/form-data">
+		{% csrf_token %}
+		<div class="emoji_selectBar">
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="happy" required id="id_emoji_0" checked />
+				<label class="emoji_lbl" for="id_emoji_0">😊</label>
+			</div>
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="congrats" required id="id_emoji_1" />
+				<label class="emoji_lbl" for="id_emoji_1">🥳</label>
+			</div>
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="wink" required id="id_emoji_2" />
+				<label class="emoji_lbl" for="id_emoji_2">😆</label>
+			</div>
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="pien" required id="id_emoji_3" />
+				<label class="emoji_lbl" for="id_emoji_3">🥺</label>
+			</div>
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="hi" required id="id_emoji_4" />
+				<label class="emoji_lbl" for="id_emoji_4">👋</label>
+			</div>
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="heart" required id="id_emoji_5" />
+				<label class="emoji_lbl" for="id_emoji_5">💗</label>
+			</div>
+			<div class="emojiBtn">
+				<input type="radio" name="emoji" value="lion" required id="id_emoji_6" />
+				<label class="emoji_lbl" for="id_emoji_6">🦁</label>
+			</div>
+		</div>
+		<div class="message_inputBar">
+			<input type="text" name="comment" maxlength="30" required id="id_comment" class="msgInput" />
+			<button type="submit" class="msgSubmitBtn">
+				<svg xmlns="http://www.w3.org/2000/svg" width="29" height="27" viewBox="0 0 29 27" fill="none">
+					<path
+						d="M1.35363 6.95044L25.266 0.71056C26.9195 0.279084 28.3175 1.98596 27.5688 3.52206L16.8287 25.5561C16.423 26.3884 15.2017 26.27 14.9635 25.3753L12.3619 15.6031L18.7169 8.6485L10.3552 13.373L1.16184 8.81393C0.333191 8.403 0.458651 7.18398 1.35363 6.95044Z"
+						fill="#AC79FF" stroke="#9561E9" stroke-linejoin="round" />
+				</svg>
+			</button>
+		</div>
+	</form>
+</div>
+
 {% endblock %}
