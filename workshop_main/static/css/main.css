@@ -35,7 +35,7 @@ button {
 .main_container {
   max-width: 335px;
   min-height: 688px;
-  margin: 70px auto;
+  margin: 50px auto;
   background: linear-gradient(
     167deg,
     rgba(231, 217, 255, 0.7) 2.47%,
@@ -667,4 +667,28 @@ button {
   background: rgba(255, 255, 255, 0.56);
   box-shadow: 5px 5px 20px 0px rgba(255, 255, 255, 0.25) inset,
     5px -5px 20px 0px #fff inset;
+}
+
+.content_frame {
+  z-index: 100;
+  position: relative;
+}
+
+#background_canvas {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* background-color: var(--purple-color); */
+  overflow-x: hidden;
+  width: 100vw;
+  height: 100vh;
+  touch-action: none;
+}
+
+.ball {
+  background: black;
+  position: absolute;
+  display: inline-block;
+  border-radius: 50%;
 }

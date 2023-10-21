@@ -20,6 +20,9 @@
 <body>
 	<!--전체 div 하나 더 씌움-->
 	<div class="content_frame">
+		<!-- 원 움직이는 캔버스 -->
+		<div id="background_canvas">
+		</div>
 		<div id="content">
 			<article class="index">
 				<div class="main_container">
@@ -54,6 +57,7 @@
 		{% endblock %}
 	</div>
 	<script src="https://kit.fontawesome.com/92dfdaf3a2.js" crossorigin="anonymous"></script>
+	<script src="{% static 'js/bouncingball.js' %}"></script>
 </body>
 
 </html>
