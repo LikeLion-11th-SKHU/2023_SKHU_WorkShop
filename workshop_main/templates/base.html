@@ -5,16 +5,25 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>2023 소프트웨어공학 워크샵</title>
+
+	<!--css-->
 	<link rel="stylesheet" href="{% static 'css/reset.css' %}">
 	<link rel="stylesheet" href="{% static 'css/main.css' %}">
 	{% block link %}
 	{% endblock %}
 
-	<!-- min 변경사항 -->
-	<!-- url 변화 알아차리기 쉽게 일단 title을 url별로 다르게 분리해둠 -->
-	{% block title %}
-	<title>2023 소프트웨어공학 워크샵</title>
-	{% endblock %}
+	<!--favicon-->
+	<link rel="icon" href="{% static 'img/favicon.png' %}" type="image/x-icon">
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+	<!--kakaotalk-->
+	<meta property="og:url" content="http://skhu-swworkshop.site/test/">
+	<meta property="og:title" content="당신의 개발자 타입은?">
+	<meta property="og:image" content="{% static 'img/kakaotalk_img.png' %}">
+	<meta property="og:description" content="2023 소프트웨어공학과 워크샵">
+	<meta property="og:type" content="website">
 </head>
 
 <body>

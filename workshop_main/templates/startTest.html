@@ -1,6 +1,7 @@
 {% extends 'base.html' %}
 {% load static %}
 
+<!-- min 변경사항 -->
 {% block title %}
 <title>개발자 타입 테스트 시작</title>
 {% endblock %}
@@ -32,7 +33,7 @@
 		</div>
 		<!-- min 변경사항 -->
 		<!-- test url로 연결 -->
-		<a class="startBtn" href="{% url 'test' %}">다음으로</a>
+		<a class="nextBtn nextactiveBtn" href="{% url 'test' %}">다음으로</a>
 	</div>
 </article> <!-- testStart-->
 
