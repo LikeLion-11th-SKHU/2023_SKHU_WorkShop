@@ -54,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'workshop_main',
+    'workshop_main.apps.WorkshopMainConfig',
 ]
 
 MIDDLEWARE = [
@@ -137,7 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = [
-    BASE_DIR / 'static',
+    os.path.join(BASE_DIR, 'workshop_main', 'static'),
 ]
 
 STATIC_URL = '/static/'
