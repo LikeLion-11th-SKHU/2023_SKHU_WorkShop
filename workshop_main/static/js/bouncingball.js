@@ -1,10 +1,10 @@
 var canvas = {
 	element: document.getElementById('background_canvas'),
-	width: 700,
-	height: 812,
+	width: 300,
+	height: 90,
 	initialize: function () {
 		this.element.style.width = this.width + 'px';
-		this.element.style.height = this.height + 'px';
+		this.element.style.height = this.height + '%';
 
 		document.body.appendChild(this.element);
 	}
@@ -29,33 +29,61 @@ var Ball = {
 	},
 	moveTo: function (x, y) {
 		this.element.style.left = x + 'px';
-		this.element.style.top = y + 'px';
+		this.element.style.top = y + '%';
 	},
 	changeDirectionIfNecessary: function (x, y) {
-		if (x < 0 || x > canvas.width - this.width) {
+		if (x <= 0 || x >= canvas.width) {
 			this.dx = -this.dx;
 		}
-		if (y < 0 || y > canvas.height - this.height) {
+		if (y <= 0 || y >= canvas.height) {
 			this.dy = -this.dy;
 		}
 	},
 	draw: function (x, y) {
 		this.moveTo(x, y);
 		var ball = this;
-		setTimeout(function () {
+
+		function animate() {
 			ball.changeDirectionIfNecessary(x, y);
-			ball.draw(x + ball.dx, y + ball.dy);
-		}, 1000 / 60);
+			x += ball.dx;
+			y += ball.dy;
+			ball.moveTo(x, y);
+			requestAnimationFrame(animate);
+		}
+
+		animate();
 	}
+
 };
 canvas.initialize();
+
+// 파란색을 나중에 배치하니 파란색이 다 위를 덮고 있어서 섞이도록 함
+
 // 보라색공
-var ball1 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 2, 6, 180, 180);
-var ball2 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 5, 280, 280);
+var ball1 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 180, 180);
+
 // 파란색공
-var ball3 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 2, 2, 260, 260);
-var ball4 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 6, 180, 180);
-ball1.draw(70, 0);
-ball2.draw(350, 330);
-ball3.draw(100, 300);
-ball4.draw(500, 100);
+var ball2 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 0.5, 260, 260);
+
+// 보라색공
+var ball3 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 180, 180);
+
+// 보라색공
+var ball4 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 260, 260);
+
+// 파란색공
+var ball5 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 0.5, 180, 180);
+
+// 보라색공
+var ball6 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 280, 280);
+
+// 파란색공
+var ball7 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 0.5, 260, 260);
+
+ball1.draw(100, 80);
+ball2.draw(200, 90);
+ball3.draw(10, 10);
+ball4.draw(280, 50);
+ball5.draw(30, 40);
+ball6.draw(100, 20);
+ball7.draw(60, 10);
