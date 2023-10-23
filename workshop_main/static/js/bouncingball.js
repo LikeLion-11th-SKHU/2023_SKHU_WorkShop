@@ -1,52 +1,52 @@
 var canvas = {
-    element: document.getElementById('background_canvas'),
-    width: 700,
-    height: 812,
-    initialize: function () {
-        this.element.style.width = this.width + 'px';
-        this.element.style.height = this.height + 'px';
-        
-        document.body.appendChild(this.element);
-    }
+	element: document.getElementById('background_canvas'),
+	width: 700,
+	height: 812,
+	initialize: function () {
+		this.element.style.width = this.width + 'px';
+		this.element.style.height = this.height + 'px';
+
+		document.body.appendChild(this.element);
+	}
 };
 
 var Ball = {
-    create: function (color, dx, dy, width, height) {
-        var newBall = Object.create(this);
-        newBall.dx = dx;
-        newBall.dy = dy;
-        newBall.width = width;
-        newBall.height = height;
-        newBall.element = document.createElement('div');
-        newBall.element.style.background = color;
-        newBall.element.style.width = newBall.width + 'px';
-        newBall.element.style.height = newBall.height + 'px';
-        newBall.element.className += ' ball';
-        newBall.width = parseInt(newBall.element.style.width);
-        newBall.height = parseInt(newBall.element.style.height);
-        canvas.element.appendChild(newBall.element);
-        return newBall;
-    },
-    moveTo: function (x, y) {
-        this.element.style.left = x + 'px';
-        this.element.style.top = y + 'px';
-    },
-    changeDirectionIfNecessary: function (x, y) {
-        if (x < 0 || x > canvas.width - this.width) {
-            this.dx = -this.dx;
-        }
-        if (y < 0 || y > canvas.height - this.height) {
-            this.dy = -this.dy;
-        }
-    },
-    draw: function (x, y) {
-        this.moveTo(x, y);
-        var ball = this;
-        setTimeout(function () {
-            ball.changeDirectionIfNecessary(x, y);
-            ball.draw(x + ball.dx, y + ball.dy);
-        }, 1000 / 60);
-    }
+	create: function (color, dx, dy, width, height) {
+		var newBall = Object.create(this);
+		newBall.dx = dx;
+		newBall.dy = dy;
+		newBall.width = width;
+		newBall.height = height;
+		newBall.element = document.createElement('div');
+		newBall.element.style.background = color;
+		newBall.element.style.width = newBall.width + 'px';
+		newBall.element.style.height = newBall.height + 'px';
+		newBall.element.className += ' ball';
+		newBall.width = parseInt(newBall.element.style.width);
+		newBall.height = parseInt(newBall.element.style.height);
+		canvas.element.appendChild(newBall.element);
+		return newBall;
+	},
+	moveTo: function (x, y) {
+		this.element.style.left = x + 'px';
+		this.element.style.top = y + 'px';
+	},
+	changeDirectionIfNecessary: function (x, y) {
+		if (x < 0 || x > canvas.width - this.width) {
+			this.dx = -this.dx;
+		}
+		if (y < 0 || y > canvas.height - this.height) {
+			this.dy = -this.dy;
+		}
+	},
+	draw: function (x, y) {
+		this.moveTo(x, y);
+		var ball = this;
+		setTimeout(function () {
+			ball.changeDirectionIfNecessary(x, y);
+			ball.draw(x + ball.dx, y + ball.dy);
+		}, 1000 / 60);
+	}
 };
 canvas.initialize();
 // 보라색공
