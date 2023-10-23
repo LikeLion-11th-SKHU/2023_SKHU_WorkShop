@@ -38,7 +38,10 @@ SECRET_KEY = get_secret("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*'
+    'localhost', '127.0.0.1', # 런서버를 위해
+    ".ap-northeast-2.compute.amazonaws.com",
+    ".skhu-swworkshop.site",
+    # '*'
 ]
 
 
@@ -134,7 +137,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'workshop_main', 'static'),
+    BASE_DIR / 'static',
 ]
 
 STATIC_URL = '/static/'
