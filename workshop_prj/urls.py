@@ -28,5 +28,6 @@ urlpatterns = [
 		path('startTest/', workshop_main.views.startTest, name='startTest'),
 		path('test/', workshop_main.views.test, name='test'),
     path('guestbook/', workshop_main.views.guestbook, name='guestbook'),
-    path('introduce/', workshop_main.views.introduce, name='introduce')
+    path('introduce/', workshop_main.views.introduce, name='introduce'),
+    path('cast/', workshop_main.views.cast, name='cast')
 ]+ static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)

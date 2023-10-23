@@ -38,7 +38,10 @@ SECRET_KEY = get_secret("SECRET_KEY")
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '*'
+    'localhost', '127.0.0.1', # 런서버를 위해
+    ".ap-northeast-2.compute.amazonaws.com",
+    ".skhu-swworkshop.site",
+    # '*'
 ]
 
 
@@ -51,7 +54,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'workshop_main',
+    'workshop_main.apps.WorkshopMainConfig',
 ]
 
 MIDDLEWARE = [

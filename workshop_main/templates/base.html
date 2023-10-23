@@ -18,9 +18,11 @@
 </head>
 
 <body>
-	<!-- min 재변경사항 -->
 	<!--전체 div 하나 더 씌움-->
 	<div class="content_frame">
+		<!-- 원 움직이는 캔버스 -->
+		<div id="background_canvas">
+		</div>
 		<div id="content">
 			<article class="index">
 				<div class="main_container">
@@ -37,12 +39,11 @@
 								<hr>
 								<a class="anchor_menu" href="{% url 'guestbook' %}">방명록</a>
 								<hr>
-								<a class="anchor_menu" href="#">소개</a>
+								<a class="anchor_menu" href="{% url 'cast' %}">소개</a>
 							</div>
 						</div>
 					</nav> <!-- nav_container-->
 
-					<!-- min 변경사항 -->
 					<!--내부 내용 분리-->
 					{% block content %}
 
@@ -51,12 +52,12 @@
 			</article>
 		</div> <!-- 전체 콘텐츠 -->
 
-		<!-- min 재변경사항 -->
 		<!--방명록 input 분리-->
 		{% block input %}
 		{% endblock %}
 	</div>
 	<script src="https://kit.fontawesome.com/92dfdaf3a2.js" crossorigin="anonymous"></script>
+	<script src="{% static 'js/bouncingball.js' %}"></script>
 </body>
 
 </html>
