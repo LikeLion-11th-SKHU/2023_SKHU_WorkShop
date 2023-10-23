@@ -470,6 +470,9 @@ button {
 }
 
 .applyBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 22px auto 27px auto;
   width: 194px;
   height: 46px;
