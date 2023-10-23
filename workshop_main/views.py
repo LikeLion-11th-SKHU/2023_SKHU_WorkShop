@@ -47,3 +47,6 @@ def guestbook(request):
 
 def introduce(request):
     return render(request, 'introduce.html')
+
+def cast(request):
+    return render(request, 'cast.html')
