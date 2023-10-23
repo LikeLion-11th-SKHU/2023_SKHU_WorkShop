@@ -372,10 +372,7 @@ button {
 
 .wrap_dev_Img {
   margin: 30px 0 0 0;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%;
-  overflow: hidden;
+  width: 250px;
 }
 
 .wrap_dev_Img img {
