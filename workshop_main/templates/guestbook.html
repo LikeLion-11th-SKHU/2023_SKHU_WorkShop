@@ -33,7 +33,7 @@
 					<p class="paragraph_comment">{{ guest_book.comment }}</p>
 				</div>
 				<div class="guestbook_dateandlike">
-					<span class="span_date">{{ guest_book.pub_date }}</span>
+					<span class="span_date">{{ guest_book.pub_date|date:'m월 j일 H:i' }}</span>
 					<form method="POST" enctype="multipart/form-data" class="contain_like">
 						{% csrf_token %}
 						<input type="hidden" name="workshop_id" value="{{ guest_book.id }}">
