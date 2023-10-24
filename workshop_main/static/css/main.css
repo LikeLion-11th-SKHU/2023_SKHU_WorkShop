@@ -76,7 +76,7 @@ button {
   margin: 30px auto 20px auto;
   border-radius: 20px;
   border: 4px solid transparent;
-  box-shadow: inset -5px -5px 20px #ffffff4c, inset 0px 4px 200px #ab79ff33,
+  box-shadow: inset -5px -5px 20px #ffffff4c, inset 0px 4px 200px #e9dbff,
     -50px 50px 200px #ab79ff, inset 0px 10px 50px #ffffff80;
   backdrop-filter: blur(35px) brightness(100%);
   background-image: linear-gradient(
@@ -144,11 +144,11 @@ button {
   height: 460px;
   max-width: 0;
   z-index: 1;
-  background-color: #ddfdf1;
+  background-color: #d5bcff;
   border: 2px solid transparent;
   border-radius: 20px;
   box-shadow: inset -5px -5px 20px #ffffff4c, inset 0px 4px 200px #d9d6fc,
-    -50px 50px 200px #778096, inset 0px 10px 50px #ffffff80;
+    -50px 50px 200px #ffffff, inset 0px 10px 50px #ffffff80;
   background-origin: border-box;
   background-clip: content-box, border-box;
 }
@@ -535,10 +535,10 @@ button {
   align-items: center;
   width: 266px;
   height: 228px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255);
   border: 1px solid rgba(15, 23, 42, 0.05);
   border-radius: 30px;
-  box-shadow: (4px -4px 10px rgba(0, 0, 0, 0.05));
+  box-shadow: (4px -4px 10px rgba(0, 0, 0, 0.07));
 }
 
 .paragraph_apply {
@@ -546,7 +546,7 @@ button {
   text-align: center;
   color: var(--black-color);
   font-size: 16px;
-  font-weight: 300;
+  font-weight: 400;
 }
 
 .applyBtn {
