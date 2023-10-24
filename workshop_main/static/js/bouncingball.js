@@ -60,25 +60,25 @@ canvas.initialize();
 // 파란색을 나중에 배치하니 파란색이 다 위를 덮고 있어서 섞이도록 함
 
 // 보라색공
-var ball1 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 180, 180);
+var ball1 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 1, 0.2, 180, 180);
 
 // 파란색공
-var ball2 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 0.5, 260, 260);
+var ball2 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 1, 0.2, 260, 260);
 
 // 보라색공
-var ball3 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 180, 180);
+var ball3 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 1, 0.2, 180, 180);
 
 // 보라색공
-var ball4 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 260, 260);
+var ball4 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 1, 0.2, 260, 260);
 
 // 파란색공
-var ball5 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 0.5, 180, 180);
+var ball5 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 1, 0.2, 180, 180);
 
 // 보라색공
-var ball6 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 4, 0.5, 280, 280);
+var ball6 = Ball.create("linear-gradient(180deg, #FF87E5 29.69%, #DA81F0 52.08%, #AC79FF 79.69%)", 1, 0.2, 280, 280);
 
 // 파란색공
-var ball7 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 4, 0.5, 260, 260);
+var ball7 = Ball.create("linear-gradient(180deg, #86FFD3 0%, #84FAE3 30.73%, #83F6EE 52.6%, #81F0FF 100%)", 1, 0.2, 260, 260);
 
 ball1.draw(100, 80);
 ball2.draw(200, 90);
