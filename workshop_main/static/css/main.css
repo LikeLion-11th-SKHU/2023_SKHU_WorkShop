@@ -78,7 +78,7 @@ button {
   border: 4px solid transparent;
   box-shadow: inset -5px -5px 20px #ffffff4c, inset 0px 4px 200px #e9dbff,
     -50px 50px 200px #ab79ff, inset 0px 10px 50px #ffffff80;
-  backdrop-filter: blur(35px) brightness(100%);
+  backdrop-filter: blur(45px) brightness(100%);
   background-image: linear-gradient(
       180deg,
       rgba(231.28, 216.75, 255, 0.7) 0%,
